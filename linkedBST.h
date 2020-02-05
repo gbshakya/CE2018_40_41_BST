@@ -1,21 +1,27 @@
-
-
 #include "BST.h"
 
 class Node{
-int data;
-Node *left;
-Node *right;
+    public:
+    int data;
+    Node *left;
+    Node *right;
 };
 
 
 class LinkedBST:public BST{
+    public:
+    Node* root;
+    LinkedBST();
+    void preorderTraversal();
+    void add(int data);
+    void add(Node* &root,int data);
+    bool isIn(int data);
 
-private:
-    Node *root;
+    private:
+    bool find(Node* &root,int targetKey);
+    void insert(Node* &subtree, Node* newNode);
+    void traverse(Node* root);
 
-public:
-    void add(int val);
-    void preOrderTraversal();
-    bool isIN(int val);
-    };
+};
+
+
